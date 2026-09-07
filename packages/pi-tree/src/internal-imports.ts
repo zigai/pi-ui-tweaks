@@ -1,4 +1,4 @@
-import { loadPiInternalModule } from "@zigai/pi-extension-internals";
+import { loadPiRuntimeModule } from "@zigai/pi-extension-internals";
 
 export type TreeSelectorModule = {
     TreeSelectorComponent: new (
@@ -23,7 +23,7 @@ export type ThemeModule = {
 };
 
 export async function loadTreeInternals(): Promise<[TreeSelectorModule, ThemeModule] | undefined> {
-    const treeSelectorModule = await loadPiInternalModule(
+    const treeSelectorModule = await loadPiRuntimeModule(
         "modes/interactive/components/tree-selector.js",
         {
             scope: "pi-tree",
@@ -44,7 +44,7 @@ export async function loadTreeInternals(): Promise<[TreeSelectorModule, ThemeMod
     );
     if (treeSelectorModule === undefined) return undefined;
 
-    const themeModule = await loadPiInternalModule("modes/interactive/theme/theme.js", {
+    const themeModule = await loadPiRuntimeModule("modes/interactive/theme/theme.js", {
         scope: "pi-tree",
         feature: "tree selector patch",
         parse(module: unknown): ThemeModule | undefined {
