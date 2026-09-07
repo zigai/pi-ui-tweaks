@@ -1,4 +1,4 @@
-import { loadPiRuntimeModule } from "@zigai/pi-extension-internals";
+import { loadPiRuntimeModule } from "./pi-runtime-import.ts";
 
 export type TreeSelectorModule = {
     TreeSelectorComponent: new (
