@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@zigai/pi-extension-internals": "0.1.0",
-    "@zigai/pi-extension-settings": "0.5.2"
+    "@zigai/pi-extension-settings": "0.5.3"
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",

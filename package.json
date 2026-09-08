@@ -39,7 +39,7 @@
     "config:check": "pi-extension-settings check"
   },
   "dependencies": {
-    "@zigai/pi-extension-settings": "0.5.2"
+    "@zigai/pi-extension-settings": "0.5.3"
   },
   "devDependencies": {
     "@earendil-works/pi-agent-core": "^0.84.4",
