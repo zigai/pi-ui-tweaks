@@ -8,11 +8,13 @@ repos:
         pass_filenames: false
       - id: format-check
         name: format check
-        entry: npm run format:check
+        # Pre-commit hides unstaged edits but leaves untracked files in place.
+        # Check the tracked snapshot without including unfinished new files.
+        entry: bash -o pipefail -c 'git ls-files -z | xargs -0 -r node_modules/.bin/oxfmt --check'
         language: system
         pass_filenames: false
       - id: lint
         name: lint
-        entry: npm run lint
+        entry: bash -o pipefail -c 'git ls-files -z | xargs -0 -r node_modules/.bin/oxlint -c ./oxlint.config.ts'
         language: system
         pass_filenames: false
